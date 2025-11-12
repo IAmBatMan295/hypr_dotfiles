@@ -1,0 +1,46 @@
+# ~/.config/yazi/yazi.toml
+
+
+[mgr]
+
+show_hidden=true
+
+
+# --- 1. Define Our "Opener" ---
+# We create a new opener called 'default'
+[opener]
+default = [
+    # We tell it to use 'gio open', which is what nemo uses.
+    # This will correctly read your .desktop files (like nvim.desktop)
+    # and launch terminal applications.
+    { run = 'gio open "$@"', orphan = true },
+]
+
+
+# --- 2. Create Our "Open" Rule ---
+[open]
+# Rewrite all default rules.
+rules = [
+    # This single rule matches *all* files and tells
+    # them to use our new 'default' opener.
+    { name = "*", use = "default" },
+]
+
+# ~/.config/yazi/yazi.toml
+
+[preview]
+# Set image preview quality (50-90, default is 75)
+image_quality = 90
+
+# Wrap long lines in the code preview
+wrap = "yes"
+
+[tasks]
+# You can limit the pixel size of images to be decoded.
+# For example, to set a max width of 8192 and unlimited height:
+# image_bound = [8192, 0]
+
+# You can also limit the *memory* used for decoding.
+# 30MB would be 31457280 bytes.
+image_alloc = 0
+image_bound = [0,0]
