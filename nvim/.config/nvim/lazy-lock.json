@@ -1,0 +1,7 @@
+{
+  "ash": { "branch": "main", "commit": "89c175581ff3ac9761c23dc2ee4f2838fa47bad9" },
+  "lazy.nvim": { "branch": "main", "commit": "85c7ff3711b730b4030d03144f6db6375044ae82" },
+  "mini.nvim": { "branch": "main", "commit": "f43357be022565d969795cde29b8988d082cc913" },
+  "nvim-treesitter": { "branch": "master", "commit": "42fc28ba918343ebfd5565147a42a26580579482" },
+  "render-markdown.nvim": { "branch": "main", "commit": "f58c05f349d6e7650f4b40b0df1514400f0c10de" }
+}

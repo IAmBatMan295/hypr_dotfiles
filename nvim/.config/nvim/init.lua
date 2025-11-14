@@ -61,6 +61,39 @@ require("lazy").setup({
       end,
     },
 
+    -- === PLUGINS ADDED AS REQUESTED ===
+    
+    -- 1. The Treesitter parser engine (Dependency)
+    {
+      "nvim-treesitter/nvim-treesitter",
+      build = ":TSUpdate",
+      config = function()
+        require("nvim-treesitter.configs").setup({
+          -- Ensure markdown parsers are installed
+          ensure_installed = { "markdown", "markdown_inline" },
+          auto_install = true,
+          highlight = { enable = true },
+        })
+      end,
+    },
+
+    -- 2. The 'mini.nvim' suite (Dependency for icons)
+    {
+      "nvim-mini/mini.nvim",
+      version = false, -- Use latest
+      -- The problematic 'config' function has been REMOVED.
+      -- The plugin just needs to be loaded.
+    },
+
+    -- 3. The 'render-markdown' plugin itself
+    {
+      'MeanderingProgrammer/render-markdown.nvim',
+      dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' },
+      opts = {}, -- lazy.nvim will automatically call setup() with these options
+      ft = { "markdown" }, -- Only load when opening a markdown file
+    },
+    -- === END OF NEW PLUGINS ===
+    
     -- You can add all future plugins here
 
   },
