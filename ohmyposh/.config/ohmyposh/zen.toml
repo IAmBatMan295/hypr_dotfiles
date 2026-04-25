@@ -1,0 +1,44 @@
+"$schema" = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+version = 4
+final_space = true
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true
+
+  # PATH BLOCK with grey background - diamond style allows transparent leading spaces
+  [[blocks.segments]]
+  type = 'path'
+  style = 'diamond'
+  foreground = '#ffffff'
+  background = 'transparent'
+  leading_diamond = ''
+  trailing_diamond = ''
+  template = '  {{ .Path }}'
+
+  [blocks.segments.options]
+  style = 'full'
+
+  # GIT BRANCH with icon (only shows in git repos)
+  [[blocks.segments]]
+  type = 'git'
+  style = 'plain'
+  foreground = '#8d8d8d'
+  background = 'transparent'
+  template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <fg=#ffffff>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+
+
+  [blocks.segments.options]
+  branch_icon = '  '
+  fetch_status = true
+  fetch_upstream_icon = true
+
+  # ARROW
+  [[blocks.segments]]
+  type = 'text'
+  style = 'plain'
+  foreground = '#ffffff'
+  background = 'transparent'
+  template = ' '

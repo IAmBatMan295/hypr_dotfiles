@@ -1,0 +1,25 @@
+@define-color window_bg_color alpha(#000000, 1);
+@define-color window_fg_color #ffffff;
+@define-color view_bg_color alpha(#000000, 1);
+@define-color view_fg_color #ffffff;
+@define-color popover_bg_color alpha(#000000, 1);
+@define-color popover_fg_color #ffffff;
+@define-color accent_color #ffffff;
+@define-color accent_bg_color #c9c9c9;
+@define-color accent_fg_color #ffffff;
+@define-color headerbar_bg_color #000000;
+@define-color headerbar_fg_color #ffffff;
+
+button {
+    background-color: #000000;
+}
+button:checked,
+button:active {
+    background-color: #000000;
+    border: 2px solid #ffffff;
+}
+
+/* Nemo file manager font */
+.nemo-window * {
+    font-family: "JetBrainsMono Nerd Font";
+}

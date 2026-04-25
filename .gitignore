@@ -1,0 +1,23 @@
+tmux/.config/tmux/plugins/
+
+# Track only VS Code settings, ignore all other VS Code state/cache files.
+Code/*
+!Code/.config/
+Code/.config/*
+!Code/.config/Code/
+Code/.config/Code/*
+!Code/.config/Code/User/
+Code/.config/Code/User/*
+!Code/.config/Code/User/settings.json
+
+# Keep uosc/thumbfast managed by installer, not in git.
+mpv/.config/mpv/scripts/uosc/
+mpv/.config/mpv/script-opts/uosc.conf
+mpv/.config/mpv/scripts/thumbfast.lua
+mpv/.config/mpv/script-opts/thumbfast.conf
+mpv/.config/mpv/fonts/uosc_icons.otf
+mpv/.config/mpv/fonts/uosc_textures.ttf
+
+# Personal file manager shortcuts.
+gtk-3.0/.config/gtk-3.0/bookmarks
+mpd/.config/mpd/state

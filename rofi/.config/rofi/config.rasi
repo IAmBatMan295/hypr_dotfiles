@@ -1,0 +1,149 @@
+configuration {
+    modi: "drun,run,filebrowser";
+    show-icons: true;
+    display-drun: "  Apps";
+    display-run: "  Run";
+    display-filebrowser: "  Files";
+    drun-display-format: "{name}";
+    
+    /* INTELLIGENCE UPGRADE */
+    matching: "fuzzy";        /* Enables true fuzzy search */
+    sort: true;               /* Sorts by relevance, not just alphabet */
+    sorting-method: "fzf";    /* if supported, otherwise standard fuzzy */
+    
+    /* THE FIX: REMOVED 'drun-categories' SO WEB APPS SHOW UP */
+    
+    /* Performance */
+    lazy-filter: true;
+    filter-lines: 8;
+    
+    /* Behavior */
+    scroll-method: 1;
+    click-to-exit: true;
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+    
+    /* Keybindings for Mode Switching */
+    kb-mode-next: "Shift+Right,Control+Tab";
+    kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab";
+}
+
+
+@import "~/.config/rofi/colors.rasi"
+
+* {
+    font: "JetBrainsMono Nerd Font 13";
+    background-color: transparent;
+    text-color: @on-surface;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    background-color: @on-primary;
+    border: 1px solid;
+    border-color: @outline;
+    border-radius: 0px;
+    padding: 10px;
+    width: 350px;
+    transparency: "real";
+    location: center;
+    anchor: center;
+}
+
+mainbox {
+    spacing: 12px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    background-color: transparent;
+    border: 1px solid;
+    border-color: @outline;
+    border-radius: 0px;
+    padding: 12px 16px;
+    spacing: 10px;
+    children: [ entry ];
+}
+
+entry {
+    placeholder: "Search...";
+    placeholder-color: @outline-variant;
+    text-color: @on-surface;
+    cursor: text;
+}
+
+listview {
+    columns: 1;
+    lines: 6;
+    fixed-height: true;
+    fixed-columns: true;
+    cycle: true;
+    scrollbar: false;
+    spacing: 8px;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+element {
+    padding: 10px 12px;
+    spacing: 12px;
+    border-radius: 0px;
+    cursor: pointer;
+    background-color: transparent;
+    text-color: @on-surface;
+    border: 1px solid;
+    border-color: @outline-variant;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @on-surface;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: @on-surface;
+}
+
+element selected.normal {
+    background-color: transparent;
+    text-color: @on-primary-container;
+    border-color: @primary;
+    border: 2px solid;
+}
+
+element-icon {
+    size: 28px;
+    cursor: inherit;
+    background-color: transparent;
+}
+
+element-text {
+    cursor: inherit;
+    highlight: @primary;
+    vertical-align: 0.5;
+    background-color: inherit;
+    text-color: inherit;
+}
+
+scrollbar {
+    handle-width: 4px;
+    handle-color: @primary;
+    background-color: @surface-container-high;
+    border-radius: 3px;
+    padding: 0;
+    enabled: false;
+}
+
+error-message {
+    padding: 12px;
+    background-color: @error-container;
+    text-color: @on-error-container;
+    border: 1px solid;
+    border-color: @error;
+    border-radius: 8px;
+}
