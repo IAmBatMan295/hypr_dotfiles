@@ -63,7 +63,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    "on-click": "foot -e wifitui"
+    "on-click": "nmgui"
   },
   "backlight": {
     "format": "{icon}",
