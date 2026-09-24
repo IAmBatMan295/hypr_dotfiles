@@ -35,7 +35,7 @@
             "<Tab>":   NextTab,
             "<S-Tab>": PreviousTab,
             "1":       SwitchToTab("Queue"),
-            "2":       SwitchToTab("Directories"),
+            "2":       SwitchToTab("Music"),
             "3":       SwitchToTab("Playlists"),
             "4":       SwitchToTab("Search"),
             "q":       Quit,
@@ -176,7 +176,7 @@
             ),
         ),
         (
-            name: "Directories",
+            name: "Music",
             pane: Split(
                 direction: Horizontal,
                 panes: [(size: "100%", borders: "ALL", pane: Pane(Directories))],
